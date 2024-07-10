@@ -58,7 +58,7 @@ router.put('/:id', (req, res) => {
 
 // Ruta para eliminar una propiedad
 router.delete('/:id', (req, res) => {
-    const propId = req.params.id;
+    const propId = parseInt(req.params.id);
     database.query('DELETE FROM propiedades WHERE prop_codigo = ?', [propId], (err, result) => {
         if (err) {
             console.error('Error al eliminar la propiedad:', err);
